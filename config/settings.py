@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'board',
+    'channels',
     'iniad.apps.IniadConfig',
     'account.apps.AccountConfig',
     'django.contrib.admin',
@@ -121,3 +122,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+ASGI_APPLICATION = 'config.asgi.application'
