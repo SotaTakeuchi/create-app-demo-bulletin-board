@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'board',
     'iniad.apps.IniadConfig',
     'account.apps.AccountConfig',
     'django.contrib.admin',
