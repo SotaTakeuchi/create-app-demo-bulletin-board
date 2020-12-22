@@ -31,13 +31,11 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'django.contrib.sites',
     'iniad.apps.IniadConfig',
-    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
