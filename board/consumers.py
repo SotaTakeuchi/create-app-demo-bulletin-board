@@ -12,6 +12,14 @@ class ChatConsumer(WebsocketConsumer):
             self.channel_name
         )
         self.accept()
+        # Display log
+        messages = Message.objects.all()
+        for i in messages:
+            user_day =i.user + ": " + str(i.created)
+            message = i.message
+            self.send(text_data=json.dumps({'message': user_day}))
+            self.send(text_data=json.dumps({'message': message}))
+            self.send(text_data=json.dumps({'message': ''}))
     def disconnect(self, close_code):
         # Leave room group
         async_to_sync(self.channel_layer.group_discard)(
