@@ -14,7 +14,7 @@ class ChatConsumer(WebsocketConsumer):
         )
         self.accept()
         # Display log
-        messages = Message.objects.all()
+        messages = Message.objects.filter(course=self.scope['url_route']['kwargs']['room_name'])
         for i in messages:
             user_day =i.user + ": " + i.created.strftime('%Y-%m-%d %H:%M:%S')
             message = i.message
@@ -37,13 +37,14 @@ class ChatConsumer(WebsocketConsumer):
             { 'type': 'chat_message', 'message': message }
         )
         Message.objects.create(
+            course = self.scope['url_route']['kwargs']['room_name'],
             user = "名無し",
             message = message,
         )
     # Receive message from room group
     def chat_message(self, event):
         # Send message to WebSocket
-        messages = Message.objects.all()
+        messages = Message.objects.filter(course=self.scope['url_route']['kwargs']['room_name'])
         db_message = messages[len(messages)-1]
         user_day = db_message.user + ": " + db_message.created.strftime('%Y-%m-%d %H:%M:%S')
         message = db_message.message
