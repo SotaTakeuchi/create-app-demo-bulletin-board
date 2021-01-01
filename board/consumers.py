@@ -2,6 +2,7 @@ from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
 import json
 from board.models import Message
+import datetime
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
         self.room_name = self.scope['url_route']['kwargs']['room_name']
@@ -15,7 +16,7 @@ class ChatConsumer(WebsocketConsumer):
         # Display log
         messages = Message.objects.all()
         for i in messages:
-            user_day =i.user + ": " + str(i.created)
+            user_day =i.user + ": " + i.created.strftime('%Y-%m-%d %H:%M:%S')
             message = i.message
             self.send(text_data=json.dumps({'message': user_day}))
             self.send(text_data=json.dumps({'message': message}))
@@ -44,7 +45,7 @@ class ChatConsumer(WebsocketConsumer):
         # Send message to WebSocket
         messages = Message.objects.all()
         db_message = messages[len(messages)-1]
-        user_day = db_message.user + ": " + str(db_message.created)
+        user_day = db_message.user + ": " + db_message.created.strftime('%Y-%m-%d %H:%M:%S')
         message = db_message.message
         self.send(text_data=json.dumps({'message': user_day}))
         self.send(text_data=json.dumps({'message': message}))
