@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/iniad/network-enshu/network-enshu-team7/team7_app"
+VIRTUAL_ENV="/home/iniad/EE2B/network-enshu-team7/team7_app"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
