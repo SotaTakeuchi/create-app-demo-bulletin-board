@@ -2,17 +2,47 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
+{% block head %}
+<style>
+    .youtube {
+        width: 60%;
+        margin: 0 auto;
+    }
+    .youtube__inner {
+        position: relative;
+        padding-bottom: calc(441 / 784 * 10%);
+    }
+    .youtube__iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+{% endblock %}
 {% block title %}動画紹介{% endblock %}
 
 {% block header %}
 
-<body>
     <h2>動画紹介</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/iGrEXngHGWg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/OxQL3oD78sw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="youtube">
+        <div class="youtube__inner">
+            <iframe width="784" height="441" 
+            src="https://www.youtube.com/embed/iGrEXngHGWg" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="youtube">
+        <div class="youtube__inner">
+            <iframe width="784" height="441" 
+            src="https://www.youtube.com/embed/OxQL3oD78sw" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+        </div>
+    </div>
     <br>
     <br>
-</body>
 
 {% endblock %}

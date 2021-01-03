@@ -9,3 +9,6 @@ class IndexViews(generic.TemplateView):
 
 class ScheduleViews(generic.TemplateView):
     template_name='schedule.html'
+
+class VideosViews(generic.TemplateView):
+    template_name='videos.html'
