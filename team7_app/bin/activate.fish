@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/iniad/network-enshu/network-enshu-team7/team7_app"
+set -gx VIRTUAL_ENV "/home/iniad/EE2B/network-enshu-team7/team7_app"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
