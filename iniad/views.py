@@ -1,6 +1,11 @@
 from django.shortcuts import render
+from django.views import generic
+
 
 # Create your views here.
 
-def Index(request):
-    return render(request, 'iniad/index.html' {})
+class IndexViews(generic.TemplateView):
+    template_name='index.html'
+
+class ScheduleViews(generic.TemplateView):
+    template_name='schedule.html'
