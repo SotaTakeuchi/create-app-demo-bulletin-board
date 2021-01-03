@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('iniad.urls'), name="iniad"),
     path('accounts/', include('allauth.urls')),
+    path('board/', include('board.urls')),
 ]

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'accounts.apps.AccountsConfig',
+    'board',
+    'channels',
     'iniad.apps.IniadConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -155,3 +157,12 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_EMAIL_REQUIRED = True
 
+ASGI_APPLICATION = 'config.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
