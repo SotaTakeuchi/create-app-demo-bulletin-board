@@ -34,17 +34,17 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'board' 'engineer' %}">BOARD</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'board' 'engineer' %}">BULL BOARD</a>
-                        </li>
-                        <li>
-                            <a class="nav-link2" id="user">{{ user.get_username }}さん</a>
+                            <p class="nav-link" id="user">{{ user.get_username }}さん</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">SIGNIN</a>
+                            <a class="nav-link" href="{% url 'account_signup' %}">SIGNUP</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}">LOGIN</a>
