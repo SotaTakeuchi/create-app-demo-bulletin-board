@@ -16,7 +16,6 @@
     <br/><a href="{% url 'board' 'business' %}">ビジネス</a>
     <br/><a href="{% url 'board' 'civil' %}">シビル</a>
 </body>
-{% endblock %}
 <script>
     var roomName = {{ room_name_json }};
     if(['engineer', 'design', 'business', 'civil'].includes(roomName)) {
@@ -46,4 +45,5 @@
         alert('Onry use 4 channels.\n[engineer, design, business, civil]');
     }
 </script>
+{% endblock %}
 </html>
