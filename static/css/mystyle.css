@@ -35,6 +35,6 @@ img{
 }
 
 #user{
-    color: rgb(217, 255, 0);
-    font-size: 22px;
+    font-size: 1rem;
+    margin-bottom: 0;
 }
